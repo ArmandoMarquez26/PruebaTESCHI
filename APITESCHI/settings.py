@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'APITESCHI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proyecto_ct6k',
+        'USER': 'proyecto_ct6k_user',
+        'PASSWORD': 'nq1jS2yJgPZiUCUN8lLqzBtk6F0gcYGa',
+        'HOST': 'oregon-postgres.render.com', # Puede ser una dirección IP o un nombre de host
+        'PORT': '5432', # Deja en blanco para usar el puerto predeterminado (5432)
     }
 }
 
