@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-6d3&55%8b)=79rx9!3@)j6n&shf&p%=)=8+_f)029ov@c4sslr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'APITESCHI.urls'
@@ -74,18 +77,29 @@ WSGI_APPLICATION = 'APITESCHI.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'proyecto_ct6k',
         'USER': 'proyecto_ct6k_user',
-        'PASSWORD': 'nq1jS2yJgPZiUCUN8lLqzBtk6F0gcYGa',
+        'PASSWORD': 'R9hjJBCHflzaInbHGRkFn8dc8Eu5vrcU',
         'HOST': 'oregon-postgres.render.com', # Puede ser una dirección IP o un nombre de host
         'PORT': '5432', # Deja en blanco para usar el puerto predeterminado (5432)
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proyecto',
+        'USER': 'postgres',
+        'PASSWORD': '123',
+        'HOST': 'localhost', # Puede ser una dirección IP o un nombre de host
+        'PORT': '', # Deja en blanco para usar el puerto predeterminado (5432)
+    }
+}
 
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
